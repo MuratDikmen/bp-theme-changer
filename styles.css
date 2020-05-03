@@ -1,8 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Arial", Helvetica, sans-serif;
+  font-family: "Raleway", Helvetica, sans-serif;
   letter-spacing: 0.4px;
+}
+
+body {
+  --bg-primary: #ffffff;
+  --accent-color: rgb(73, 73, 73);
+  --text-color: rgb(73, 73, 73);
+  --button-text-color: var(--background-color);
+  --transition-delay: 0.3s;
+  --btn-bg: rgb(230, 230, 230);
+  --card-title: #000;
+  --list-hover-color: rgb(73, 73, 73);
+  --card-bg: #fff;
+  --card-hover-bg: var(--card-bg);
+  --img-opacity: 1;
+  --btn-hover: rgb(210, 210, 210);
+  --border-color: rgb(200, 200, 200);
+}
+
+body.dark {
+  --accent-color: rgb(255, 255, 255);
+  --text-color: white;
+  --background-color: rgb(51, 51, 51);
+  --btn-bg: rgb(73, 73, 73);
+  --card-title: #fff;
+  --card-bg: rgb(73, 73, 73);
+  --card-hover-bg: rgb(97, 97, 97);
+  --img-opacity: 0.5;
+  --btn-hover: rgb(93, 93, 93);
+  --border-color: #fff;
 }
 
 a {
@@ -22,6 +53,11 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  border-bottom: 1px solid;
+  border-color: var(--border-color);
+  transition: var(--transition-delay);
 }
 
 nav ul {
@@ -39,14 +75,17 @@ nav ul li {
   flex-grow: 1;
 }
 
-.left-panel,
-.right-panel {
-  height: 100%;
-}
-
 /* LEFT PANEL */
 .left-panel {
-  background-color: aqua;
+  border-right: 1px solid;
+  border-color: var(--border-color);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  transition: var(--transition-delay);
+  color: var(--accent-color);
 }
 
 .left-nav-container ul {
@@ -58,24 +97,76 @@ nav ul li {
 }
 
 .left-nav-container ul li:hover {
-  background-color: blue;
+  background-color: rgb(233, 233, 233);
+  color: var(--list-hover-color);
   cursor: pointer;
 }
 
 /* RIGHT PANEL */
 .right-panel {
-  background-color: crimson;
+  padding: 10px 0 10px 10px;
+  background-color: var(--background-color);
+  transition: var(--transition-delay);
 }
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-columns: repeat(auto-fill, 300px);
   grid-auto-rows: auto;
   grid-gap: 1rem;
 }
 
 .card {
-  border: 2px solid #e7e7e7;
-  border-radius: 4px;
-  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: var(--card-bg);
+}
+
+.card:hover {
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--card-hover-bg);
+  cursor: pointer;
+}
+
+.card:hover img {
+  opacity: var(--img-opacity);
+  transition: var(--transition-delay);
+}
+.card-content {
+  padding: 2px 16px;
+}
+
+.card-content h4,
+.card-content p {
+  margin: 12px 0;
+}
+
+.card-content h4 {
+  height: 3rem;
+  color: var(--card-title);
+}
+
+.card-content p {
+  color: #aaaaaa;
+}
+
+.card img {
+  border-radius: 5px 5px 0 0;
+}
+
+.theme-changer-btn {
+  background-color: var(--btn-bg);
+  color: var(--text-color);
+  transition: var(--transition-delay);
+  width: 100%;
+  height: 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.theme-changer-btn:hover {
+  background-color: var(--btn-hover);
 }
