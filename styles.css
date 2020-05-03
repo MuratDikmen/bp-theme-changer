@@ -5,6 +5,7 @@
   padding: 0;
   font-family: "Raleway", Helvetica, sans-serif;
   letter-spacing: 0.4px;
+  box-sizing: border-box;
 }
 
 body {
@@ -169,4 +170,37 @@ nav ul li {
 
 .theme-changer-btn:hover {
   background-color: var(--btn-hover);
+}
+
+.mobile {
+  visibility: hidden;
+  display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  .left-panel {
+    visibility: hidden;
+    display: none;
+  }
+  .app-container {
+    grid-template-columns: auto;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .right-panel {
+    padding: 10px;
+  }
+  nav ul {
+    display: none;
+    visibility: hidden;
+  }
+  .mobile {
+    display: block;
+    visibility: visible;
+  }
+  .mobile button {
+    padding: 10px;
+  }
 }

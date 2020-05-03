@@ -1,3 +1,5 @@
-document.querySelector(".theme-changer-btn").addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-});
+document.querySelectorAll(".theme-changer-btn").forEach((btn) =>
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  })
+);
